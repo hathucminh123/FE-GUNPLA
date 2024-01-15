@@ -12,6 +12,7 @@ import { useSelector } from 'react-redux'
 import { useState } from 'react'
 import Loading from '../../components/LoadingComponent/Loading'
 import { useDebounce } from '../../hooks/useDebounce'
+import Services from '../../components/Services/Services';
 import { useEffect } from 'react'
 
 const HomePage = () => {
@@ -45,6 +46,7 @@ const HomePage = () => {
 
   return (
     <Loading isLoading={isLoading || loading}>
+
       <div style={{ width: '1270px', margin: '0 auto' }}>
         <WrapperTypeProduct>
           {typeProducts.map((item) => {
@@ -57,6 +59,7 @@ const HomePage = () => {
       <div className='body' style={{ width: '100%', backgroundColor: '#efefef', }}>
         <div id="container" style={{ height: '1000px', width: '1270px', margin: '0 auto' }}>
           <SliderComponent arrImages={[slider1, slider2, slider3]} />
+          {/* <Services/> */}
           <WrapperProducts>
             {products?.data?.map((product) => {
               return (

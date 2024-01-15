@@ -154,7 +154,7 @@ const ProductDetailsComponent = ({idProduct}) => {
                         <span className='change-address'>Đổi địa chỉ</span>
                     </WrapperAddressProduct>
                     <LikeButtonComponent
-                     dataHref={ process.env.REACT_APP_IS_LOCAL 
+                     dataHref={ true
                                 ? "https://developers.facebook.com/docs/plugins/" 
                                 : window.location.href
                             } 
@@ -203,7 +203,7 @@ const ProductDetailsComponent = ({idProduct}) => {
                     </div>
                 </Col>
                 <CommentComponent 
-                    dataHref={process.env.REACT_APP_IS_LOCAL 
+                    dataHref={true
                         ? "https://developers.facebook.com/docs/plugins/comments#configurator"
                         : window.location.href
                     } 
