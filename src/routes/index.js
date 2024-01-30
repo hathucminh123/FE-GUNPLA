@@ -12,6 +12,8 @@ import ProfilePage from "../pages/Profile/ProfilePage";
 import SignInPage from "../pages/SignInPage/SignInPage";
 import SignUpPage from "../pages/SignUpPage/SignUpPage";
 import TypeProductPage from "../pages/TypeProductPage/TypeProductPage";
+import  Blog from "../pages/Blog/Blog"
+import BlogDetails from "../pages/BlogDetails/BlogDetails";
 
 export const routes = [
     {
@@ -79,6 +81,18 @@ export const routes = [
         page: AdminPage,
         isShowHeader: false,
         isPrivated: true
+    },
+    {
+        path: '/blogs',
+        page: Blog,
+        isShowHeader: true
+       
+    },
+    {
+        path: '/blogs/:slug',
+        page: BlogDetails,
+        isShowHeader: true
+       
     },
     {
         path: '*',

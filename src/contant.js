@@ -1,6 +1,6 @@
 export const orderContant = {
   delivery: {
-    fast: 'FAST',
+    fast: 'GRAB',
     gojek: 'GO_JEK'
   },
   payment: {

@@ -13,7 +13,13 @@ import { useState } from 'react'
 import Loading from '../../components/LoadingComponent/Loading'
 import { useDebounce } from '../../hooks/useDebounce'
 import Services from '../../components/Services/Services';
+import { Row, Col } from "antd";
+import { Container } from 'reactstrap'
 import { useEffect } from 'react'
+
+import BlogList from "../../components/BlogList/BlogList";
+import AboutSection from '../../components/AboutSection/AboutSection'
+import Testimonial from '../../components/Testimonial/Testimonial'
 
 const HomePage = () => {
   const searchProduct = useSelector((state) => state?.product?.search)
@@ -46,7 +52,7 @@ const HomePage = () => {
 
   return (
     <Loading isLoading={isLoading || loading}>
-
+    
       <div style={{ width: '1270px', margin: '0 auto' }}>
         <WrapperTypeProduct>
           {typeProducts.map((item) => {
@@ -57,9 +63,27 @@ const HomePage = () => {
         </WrapperTypeProduct>
       </div>
       <div className='body' style={{ width: '100%', backgroundColor: '#efefef', }}>
-        <div id="container" style={{ height: '1000px', width: '1270px', margin: '0 auto' }}>
+        <div id="container" style={{ height: '100%', width: '1270px', margin: '0 auto' }}>
           <SliderComponent arrImages={[slider1, slider2, slider3]} />
           {/* <Services/> */}
+         
+          <AboutSection />
+          <Container>
+          <Row>
+            <Col span={24} style={{marginTop:'3rem'}}>
+            <h6 className="section__subtitle" style={{color:'#f9a826',fontWeight:'600',fontSize:'3rem',textAlign:'center'}}>Thông tin </h6>
+              <h2 className="section__title" style={{textAlign:'center'}}>Những lợi ích khi mua hàng của  Rainbow Bandits  </h2>
+            </Col>
+         
+            </Row>
+            </Container>
+            <Services/>
+          <Row>
+            <Col span={24}>
+            <h6 className="section__subtitle" style={{color:'#f9a826',fontWeight:'600',fontSize:'3rem',textAlign:'center'}}>Khám phá  </h6>
+              <h2 className="section__title" style={{textAlign:'center'}}>Các sản phẩm mới nhất  </h2>
+            </Col>
+            </Row>
           <WrapperProducts>
             {products?.data?.map((product) => {
               return (
@@ -90,8 +114,40 @@ const HomePage = () => {
               onClick={() => setLimit((prev) => prev + 6)}
             />
           </div>
+          <section>
+      
+        <Container >
+          <Row style={{width:'100%'}}>
+            <Col span={24} style={{marginTop:'20px'}}>
+              <h6 className="section__subtitle" style={{color:'#f9a826',fontWeight:'600',fontSize:'3rem',textAlign:'center'}}>Khách hàng nói gì về Rainbow Bandits </h6>
+              <h2 className="section__title" style={{textAlign:'center',justifyContent:'cener'}}>Lời bình luận </h2>
+            </Col>
+
+          </Row>
+        </Container>
+        
+        <Testimonial />
+      </section>
+          <div style={{ width: '100%', display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
+          <section  style={{ width: '100%', display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
+        <Container >
+          <Row style={{width:'100%'}}>
+            <Col span='24'>
+              <h6 className="section__subtitle" style={{color:'#f9a826',fontWeight:'600',fontSize:'3rem',textAlign:'center'}}>Khám phá News với chúng tôi </h6>
+              <h2 className="section__title" style={{textAlign:'center'}}>Các tin mới nhất </h2>
+            </Col>
+       
+            < BlogList  />
+
+            <i class="ri-account-circle-fill"></i>
+       
+          </Row>
+          </Container>
+          </section>
+          </div>
         </div>
       </div>
+    
     </Loading>
   )
 }

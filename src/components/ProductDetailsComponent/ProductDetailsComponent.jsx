@@ -97,6 +97,7 @@ const ProductDetailsComponent = ({idProduct}) => {
                         amount: numProduct,
                         image: productDetails?.image,
                         price: productDetails?.price,
+                        description:productDetails?.description,
                         product: productDetails?._id,
                         discount: productDetails?.discount,
                         countInstock: productDetails?.countInStock
@@ -115,26 +116,26 @@ const ProductDetailsComponent = ({idProduct}) => {
                     <Image src={productDetails?.image} alt="image prodcut" preview={false} />
                     <Row style={{ paddingTop: '10px', justifyContent: 'space-between' }}>
                         <WrapperStyleColImage span={4} sty>
-                            <WrapperStyleImageSmall src={imageProductSmall} alt="image small" preview={false} />
+                            <WrapperStyleImageSmall src={productDetails?.image} alt="image small" preview={false} />
                         </WrapperStyleColImage>
                         <WrapperStyleColImage span={4}>
-                            <WrapperStyleImageSmall src={imageProductSmall} alt="image small" preview={false} />
-                        </WrapperStyleColImage>
-
-                        <WrapperStyleColImage span={4}>
-                            <WrapperStyleImageSmall src={imageProductSmall} alt="image small" preview={false} />
+                            <WrapperStyleImageSmall src={productDetails?.image} alt="image small" preview={false} />
                         </WrapperStyleColImage>
 
                         <WrapperStyleColImage span={4}>
-                            <WrapperStyleImageSmall src={imageProductSmall} alt="image small" preview={false} />
+                            <WrapperStyleImageSmall src={productDetails?.image} alt="image small" preview={false} />
                         </WrapperStyleColImage>
 
                         <WrapperStyleColImage span={4}>
-                            <WrapperStyleImageSmall src={imageProductSmall} alt="image small" preview={false} />
+                            <WrapperStyleImageSmall src={productDetails?.image} alt="image small" preview={false} />
                         </WrapperStyleColImage>
 
                         <WrapperStyleColImage span={4}>
-                            <WrapperStyleImageSmall src={imageProductSmall} alt="image small" preview={false} />
+                            <WrapperStyleImageSmall src={productDetails?.image} alt="image small" preview={false} />
+                        </WrapperStyleColImage>
+
+                        <WrapperStyleColImage span={4}>
+                            <WrapperStyleImageSmall src={productDetails?.image} alt="image small" preview={false} />
                         </WrapperStyleColImage>
 
                     </Row>
@@ -153,12 +154,20 @@ const ProductDetailsComponent = ({idProduct}) => {
                         <span className='address'>{user?.address}</span> -
                         <span className='change-address'>Đổi địa chỉ</span>
                     </WrapperAddressProduct>
-                    <LikeButtonComponent
+
+                    <WrapperAddressProduct style={{marginTop:"20px"}}>
+                    
+                        <span >{productDetails?.description}</span> -
+                       
+                    </WrapperAddressProduct>
+                    <div style={{marginTop:"10px"}}>
+                    {/* <LikeButtonComponent 
                      dataHref={ true
                                 ? "https://developers.facebook.com/docs/plugins/" 
                                 : window.location.href
                             } 
-                    />
+                    /> */}
+                    </div>
                     <div style={{ margin: '10px 0 20px', padding: '10px 0', borderTop: '1px solid #e5e5e5', borderBottom: '1px solid #e5e5e5' }}>
                         <div style={{ marginBottom: '10px' }}>Số lượng</div>
                         <WrapperQualityProduct>

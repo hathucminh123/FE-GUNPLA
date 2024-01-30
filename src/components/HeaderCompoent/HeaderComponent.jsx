@@ -80,10 +80,10 @@ const HeaderComponent = ({ isHiddenSearch = false, isHiddenCart = false }) => {
   }
 
   return (
-    <div style={{  heiht: '100%', width: '100%', display: 'flex',background: '#9255FD', justifyContent: 'center' }}>
+    <div style={{  heiht: '100%', width: '100%', display: 'flex',background: '#B3F8DF', justifyContent: 'center' }}>
       <WrapperHeader style={{ justifyContent: isHiddenSearch && isHiddenSearch ? 'space-between' : 'unset' }}>
         <Col span={5}>
-          <WrapperTextHeader to='/'>GUNPLASHOP</WrapperTextHeader>
+          <WrapperTextHeader style={{color:'black'}} to='/'>Rainbow Bandits </WrapperTextHeader>
         </Col>
         {!isHiddenSearch && (
           <Col span={13}>
@@ -91,7 +91,7 @@ const HeaderComponent = ({ isHiddenSearch = false, isHiddenCart = false }) => {
               size="large"
               bordered={false}
               textbutton="Tìm kiếm"
-              placeholder="input search text"
+              placeholder="nhập tên sản phẩm mà bạn muốn tìm kiếm"
               onChange={onSearch}
               backgroundColorButton="#5a20c1"
             />
@@ -99,7 +99,7 @@ const HeaderComponent = ({ isHiddenSearch = false, isHiddenCart = false }) => {
         )}
         <Col span={6} style={{ display: 'flex', gap: '54px', alignItems: 'center' }}>
           <Loading isLoading={loading}>
-            <WrapperHeaderAccout>
+            <WrapperHeaderAccout style={{color:'black'}}>
               {userAvatar ? (
                 <img src={userAvatar} alt="avatar" style={{
                   height: '30px',
@@ -118,9 +118,9 @@ const HeaderComponent = ({ isHiddenSearch = false, isHiddenCart = false }) => {
                 </>
               ) : (
                 <div onClick={handleNavigateLogin} style={{ cursor: 'pointer' }}>
-                  <WrapperTextHeaderSmall>Đăng nhập/Đăng ký</WrapperTextHeaderSmall>
+                  <WrapperTextHeaderSmall style={{color:'black'}}>Đăng nhập/Đăng ký</WrapperTextHeaderSmall>
                   <div>
-                    <WrapperTextHeaderSmall>Tài khoản</WrapperTextHeaderSmall>
+                    <WrapperTextHeaderSmall style={{color:'black'}}>Tài khoản</WrapperTextHeaderSmall>
                     <CaretDownOutlined />
                   </div>
                 </div>
@@ -130,9 +130,9 @@ const HeaderComponent = ({ isHiddenSearch = false, isHiddenCart = false }) => {
           {!isHiddenCart && (
             <div onClick={() => navigate('/order')} style={{cursor: 'pointer'}}>
               <Badge count={order?.orderItems?.length} size="small">
-                <ShoppingCartOutlined style={{ fontSize: '30px', color: '#fff' }} />
+                <ShoppingCartOutlined style={{ fontSize: '30px', color: 'black' }} />
               </Badge>
-              <WrapperTextHeaderSmall>Giỏ hàng</WrapperTextHeaderSmall>
+              <WrapperTextHeaderSmall style={{color:"black"}}>Giỏ hàng</WrapperTextHeaderSmall>
             </div>
           )}
         </Col>

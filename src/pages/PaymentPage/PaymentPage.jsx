@@ -77,12 +77,22 @@ const PaymentPage = () => {
     return 0
   },[order])
 
+  // const diliveryPriceMemo = useMemo(() => {
+  //   if(priceMemo > 200000){
+  //     return 10000
+  //   }else if(priceMemo === 0 ){
+  //     return 0
+  //   }else {
+  //     return 20000
+  //   }
+  // },[priceMemo])
+
   const diliveryPriceMemo = useMemo(() => {
-    if(priceMemo > 200000){
+    if(priceMemo >= 20000 && priceMemo < 500000){
       return 10000
-    }else if(priceMemo === 0 ){
+    }else if(priceMemo >= 500000 || order?.orderItemsSlected?.length === 0) {
       return 0
-    }else {
+    } else {
       return 20000
     }
   },[priceMemo])
@@ -251,7 +261,7 @@ const PaymentPage = () => {
                 <div>
                   <Lable>Chọn phương thức giao hàng</Lable>
                   <WrapperRadio onChange={handleDilivery} value={delivery}> 
-                    <Radio  value="fast"><span style={{color: '#ea8500', fontWeight: 'bold'}}>FAST</span> Giao hàng tiết kiệm</Radio>
+                    <Radio  value="fast"><span style={{color: '#ea8500', fontWeight: 'bold'}}>GRAB</span> Giao hàng tiết kiệm</Radio>
                     <Radio  value="gojek"><span style={{color: '#ea8500', fontWeight: 'bold'}}>GO_JEK</span> Giao hàng tiết kiệm</Radio>
                   </WrapperRadio>
                 </div>

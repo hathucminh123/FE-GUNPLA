@@ -3,6 +3,7 @@ import ButtonComponent from '../../components/ButtonComponent/ButtonComponent'
 import InputForm from '../../components/InputForm/InputForm'
 import { WrapperContainerLeft, WrapperContainerRight, WrapperTextLight } from './style'
 import imageLogo from '../../assets/images/logo-login.png'
+import minh8 from '../../assets/images/minh8.jpg'
 import { Image } from 'antd'
 import { EyeFilled, EyeInvisibleFilled } from '@ant-design/icons'
 import { useState } from 'react'
@@ -128,7 +129,7 @@ const SignInPage = () => {
           <p>Chưa có tài khoản? <WrapperTextLight onClick={handleNavigateSignUp}> Tạo tài khoản</WrapperTextLight></p>
         </WrapperContainerLeft>
         <WrapperContainerRight>
-          <Image src={imageLogo} preview={false} alt="iamge-logo" height="203px" width="203px" />
+          <Image src={minh8} preview={false} alt="iamge-logo" height="203px" width="203px" />
           <h4>Mua sắm tại Gunpla shop</h4>
         </WrapperContainerRight>
       </div>

@@ -3,7 +3,7 @@
 @import 'antd/dist/antd.min.css';
 
 :root {
-  --primary-color: #9255FD;
+  --primary-color: #B3F8DF;
 }
 
 body {
@@ -17,4 +17,10 @@ body {
 
 html {
   font-size: 62.5%;
+}
+
+.section__description {
+  color: #7c8a97;
+  font-size: 1.5rem;
+  line-height: 30px;
 }
