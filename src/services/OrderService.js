@@ -6,7 +6,7 @@ import { axiosJWT } from "./UserService"
 // // }
 // http://localhost:3001/api/order/get-order-details/639724669c6dda4fa11edcde
 export const createOrder = async (data,access_token) => {
-  const res = await axiosJWT.post(`http://localhost:3000/api/order/create/${data.user}`, data, {
+  const res = await axiosJWT.post(`https://backend-gunpla.onrender.com/api/order/create/${data.user}`, data, {
       headers: {
           token: `Bearer ${access_token}`,
       }
@@ -15,7 +15,7 @@ export const createOrder = async (data,access_token) => {
 }
 
 export const getOrderByUserId = async (id,access_token) => {
-  const res = await axiosJWT.get(`http://localhost:3000/api/order/get-all-order/${id}`, {
+  const res = await axiosJWT.get(`https://backend-gunpla.onrender.com/api/order/get-all-order/${id}`, {
       headers: {
           token: `Bearer ${access_token}`,
       }
@@ -24,7 +24,7 @@ export const getOrderByUserId = async (id,access_token) => {
 }
 
 export const getDetailsOrder = async (id,access_token) => {
-  const res = await axiosJWT.get(`http://localhost:3000/api/order/get-details-order/${id}`, {
+  const res = await axiosJWT.get(`https://backend-gunpla.onrender.com/api/order/get-details-order/${id}`, {
       headers: {
           token: `Bearer ${access_token}`,
       }
@@ -34,7 +34,7 @@ export const getDetailsOrder = async (id,access_token) => {
 
 export const cancelOrder = async (id, access_token, orderItems, userId ) => {
   const data = {orderItems, orderId: id}
-  const res = await axiosJWT.delete(`http://localhost:3000/api/order/cancel-order/${userId}`, {data}, {
+  const res = await axiosJWT.delete(`https://backend-gunpla.onrender.com/api/order/cancel-order/${userId}`, {data}, {
       headers: {
           token: `Bearer ${access_token}`,
       }
@@ -43,7 +43,7 @@ export const cancelOrder = async (id, access_token, orderItems, userId ) => {
 }
 
 export const getAllOrder = async (access_token) => {
-  const res = await axiosJWT.get(`http://localhost:3000/api/order/get-all-order`, {
+  const res = await axiosJWT.get(`https://backend-gunpla.onrender.com/api/order/get-all-order`, {
       headers: {
           token: `Bearer ${access_token}`,
       }
