@@ -75,7 +75,7 @@ const PaymentPage = () => {
       return result
     }
     return 0
-  },[order])
+  },[order, priceMemo])
 
   // const diliveryPriceMemo = useMemo(() => {
   //   if(priceMemo > 200000){

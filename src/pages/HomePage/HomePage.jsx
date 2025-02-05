@@ -128,7 +128,7 @@ const HomePage = () => {
         
         <Testimonial />
       </section>
-          <div style={{ width: '100%', display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
+          {/* <div style={{ width: '100%', display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
           <section  style={{ width: '100%', display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
         <Container >
           <Row style={{width:'100%'}}>
@@ -144,7 +144,7 @@ const HomePage = () => {
           </Row>
           </Container>
           </section>
-          </div>
+          </div> */}
         </div>
       </div>
     
